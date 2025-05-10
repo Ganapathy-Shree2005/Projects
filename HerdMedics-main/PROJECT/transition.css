@@ -1,0 +1,10 @@
+/* Start with the page invisible */
+body {
+    opacity: 0;
+    transition: opacity 0.5s ease-in;
+}
+
+/* Apply fade-in effect when the page loads */
+body.fade-in {
+    opacity: 1;
+}

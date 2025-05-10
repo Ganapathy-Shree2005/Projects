@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HerdMedics - Diagnosis Portal</title>
+    <link rel="stylesheet" href="transition.css"> 
+    <script src="transition.js" defer></script>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Manrope', sans-serif;
+            background: url('images/bghome.png') no-repeat center center fixed;
+            background-size: cover;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+
+        }
+
+        /* Header */
+        header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 97.5%;
+            padding: 15px 20px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 60px;
+            background-color: #020519;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+        }
+
+        .logo-section img {
+            width: 180px;
+            height: 80px;
+        }
+
+        /* Hero Section */
+        .hero-content {
+            position: absolute;
+            left: 19%;
+            top: 185%;
+            transform: translateY(-50%);
+            max-width: 1500px;
+            text-align: left;
+        }
+
+        .hero-title {
+            font-size: 60px;
+            max-width: 1300px;
+            font-weight: 800;
+            background: linear-gradient(90deg, #FFFFFF, #9B6EF3);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            line-height: 72px;
+        }
+
+        .hero-box {
+            background: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(10px);
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            text-align: center;
+        }
+
+        .hero-subtitle {
+            font-size: 29px;
+            font-weight: 500;
+            background: linear-gradient(90deg, #F8F9FA, #D4A5F4);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-align: center;
+            line-height: 36px;
+            margin: 0 auto;
+            max-width: 800px;
+            text-align: justify;
+        }
+
+        /* Know More Button */
+        .know-more-btn {
+            display: block;
+            margin: 30px auto;
+            padding: 12px 25px;
+            font-size: 18px;
+            font-weight: bold;
+            color: #fff;
+            background: #020519;
+            border: none;
+            border-radius: 30px;
+            cursor: pointer;
+            transition: background 0.3s ease-in-out;
+        }
+
+        .know-more-btn:hover {
+            background: #545458;
+        }
+
+        /* Navigation */
+        nav {
+            flex-grow: 1;
+            display: flex;
+            justify-content: center;
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 30px;
+        }
+
+        .nav-item {
+            padding: 10px 14px;
+            border-radius: 20px;
+            background-color: #93939A;
+            box-shadow: 0 2px 4px rgba(217, 217, 217, 0.5);
+            border: 1px solid #D9D9D9;
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: 700;
+            color: #1d1e21;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        .nav-item:hover, .nav-item.active {
+            background-color: #b0b9c6;
+            color: white;
+        }
+
+        /* Dropdown Menu */
+        .dropdown {
+            position: relative;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #93939A;
+            box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            min-width: 110px;
+            text-align: left;
+            z-index: 10;
+            top: 100%;
+            left: 0;
+        }
+
+        .dropdown-content a {
+            display: block;
+            padding: 14px;
+            color: white;
+            text-decoration: none;
+            font-size: 14px;
+            border-bottom: 1px solid #E0E0E0;
+            transition: background 0.3s;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #b0b9c6;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        /* Circle Buttons */
+        .circle-buttons {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .circle-btn {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: #93939A;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            border: 1px solid #D9D9D9;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            font-size: 18px;
+        }
+
+        .circle-btn:hover {
+            background-color: #f1f1f1;
+        }
+
+        /* Profile Dropdown */
+        .profile-dropdown {
+            position: relative;
+        }
+
+        .dropdown-content {
+            right: 0;
+            left: auto;
+            top: 50px;
+            display: none;
+            position: absolute;
+            background-color: #93939A;
+            box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            min-width: 150px;
+            z-index: 10;
+            top: 100%;
+        }
+        .dropdown-content a {
+            display: block;
+            padding: 13px;
+            color: white;
+            text-decoration: none;
+            font-size: 14px;
+            transition: background 0.3s;
+        }
+        .dropdown-content a:hover {
+            background-color: #b0b9c6;
+        }
+
+        .profile-dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        /* Smooth transition for login */
+        .fade-out {
+            opacity: 1;
+            transition: opacity 0.5s ease-in-out;
+        }
+
+        .fade-out.hidden {
+            opacity: 0;
+        }
+       
+        /* Know More Button */
+        .know-more-btn {
+            display: block;
+            margin: 30px auto;
+            padding: 12px 25px;
+            font-size: 18px;
+            font-weight: bold;
+            color: #fff;
+            background: #020519;
+            border: none;
+            border-radius: 30px;
+            cursor: pointer;
+            transition: background 0.3s ease-in-out;
+        }
+
+        .know-more-btn:hover {
+            background: #545458;
+        }
+
+        /* Image Section */
+        #more-content {
+            margin-top: 25vh; /* Pushes image further down initially */
+            text-align: center;
+            opacity: 1;
+            transform: translateY(50px);
+            transition: opacity 0.8s ease-in-out, transform 0.8s ease-in-out;
+        }
+
+        .know-more-image img {
+            width: 120%;
+            max-width: 1000px;
+             height: 600px;  /* Increase height */
+            object-fit: contain; 
+            border-radius: 15px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .show {
+            opacity: 1 !important;
+            transform: translateY(0) !important;
+        }
+        /* Image Section */
+        #more-content1 {
+            margin-top: 30vh; /* Pushes image further down initially */
+            text-align: center;
+            opacity: 1;
+            transform: translateY(50px);
+            transition: opacity 0.8s ease-in-out, transform 0.8s ease-in-out;
+        }
+
+        .know-image img {
+            width: 290%;
+            max-width: 1000px;
+            height: 600px;  /* Increase height */
+            object-fit: cover; 
+            border-radius: 15px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .show1 {
+            opacity: 1 !important;
+            transform: translateY(0) !important;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo-section">
+            <img src="images/hoomelogo.png" alt="HerdMedics Logo">
+        </div>
+        
+        <nav>
+            <div class="nav-links">
+                <button class="nav-item" onclick="window.location.href='home.html'">HOME</button>
+                <div class="dropdown">
+                    <button class="nav-item">DIAGNO AI</button>
+                    <div class="dropdown-content">
+                        <a href="live.html">LIVE SCAN</a>
+                        <a href="manual.html">MANUAL UPLOAD</a>
+                        <a href="upload.html">UPLOADS</a>
+                        
+                    </div>
+                </div>
+                <div class="dropdown">
+                    <button class="nav-item">VETPULSE</button>
+                    <div class="dropdown-content">
+                        <a href="infoherd.html">INFO HERD</a>
+                        <a href="hosp.html">HOSPITAL</a>
+                    </div>
+                </div>
+                <button class="nav-item" onclick="window.location.href='about.html'">ABOUT US</button>
+            </div>
+        </nav>
+
+        <div class="circle-buttons">
+            <div class="circle-btn">🔔</div>
+            <div class="circle-btn">💬</div>
+            <div class="profile-dropdown dropdown">
+                <div class="circle-btn" onclick="toggleProfileDropdown()">👤</div>
+                <div class="dropdown-content" id="profileDropdown">
+                    <a href="settings.html">Settings</a>
+                    <a href="whatsnew.html">What's New</a>
+                    <a href="report.html">Report Content</a>
+                    <a href="privacy.html">Privacy Policy</a>
+                    <a href="login.html">Sign Out</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="hero-content">
+        <h1 class="hero-title">Skip the hassle! AI Consultation</h1>
+        <div class="hero-box">
+            <p class="hero-subtitle">Enhancing livestock health with advanced technology for early disease detection, 
+                milk quality analysis, and smart farm management, ensuring better productivity, 
+                reduced losses, and improved well-being for farmers and their cattle.</p>
+            </div>
+            <button class="know-more-btn" onclick="showImage()">Know More</button>
+    
+    <!-- Image Section -->
+    <div id="more-content" class="know-more-image">
+        <img src="images/login2.png" alt="Know More Image">
+    </div>
+
+    <script>
+        function showImage() {
+            document.getElementById("more-content").classList.add("show");
+            window.scrollTo({
+                top: document.getElementById("more-content").offsetTop,
+                behavior: "smooth"
+            });
+        }
+</script>
+       <!-- Second Image Section -->
+<div id="more-content1" class="know-image" style="text-align: center; margin-bottom: 80px;">
+    <img src="images/home2nd.png" alt="Second Image" style="max-width: 100%; height: auto;">
+</div>
+
+<!-- Footer Section -->
+<div class="footer-container">
+    <footer style="
+        background: url('images/loginformbg.png') no-repeat;
+        background-position: left top; /* Moves the background left */
+        background-size: cover;
+        background-attachment: fixed;
+        width: 152%;
+        padding-top: 10px;
+        margin-left: -35%; 
+        min-height: 100px;
+    ">
+
+        <div style="
+            display: flex; 
+            flex-wrap: wrap; 
+            justify-content: space-between; 
+            padding: 10px 10px; 
+            color: #fff;
+            transform: translateX(-10%); /* Moves content left */
+            margin-left: 30%; 
+        ">
+            <!-- Company Info Column -->
+            <div style="flex: 1 1 300px; margin-bottom: 40px;">
+                <div style="display: flex; align-items: center; margin-bottom: 30px;">
+                    <img src="images/logo.png" alt="Logo" style="width: 150px; height: auto; margin-right: 10px;">   
+                </div>
+
+                <div style="font-family: Roboto, sans-serif; font-size: 17px; line-height: 28px; margin-bottom: 20px;">
+                    <p style="margin: 0 0 10px;">AVADI , CHENNAI - 600054</p>
+                    <p style="margin: 0 0 10px;">+91- 97911592324</p>
+                    <p style="margin: 0;">info@herdmedics.com</p>
+                </div>
+
+                <div class="social-icons" style="display: flex; gap: 16px;">
+                    <a href="#" class="circle-btn"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="circle-btn"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="circle-btn"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#" class="circle-btn"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+
+            <!-- Quick Links Column -->
+            <div style="flex: 1 1 200px;">
+                <h3 style="font-family: Poppins, sans-serif; font-weight: 500; font-size: 18px; color: #ffd700; margin-bottom: 20px;">Quick Links</h3>
+                <ul style="list-style: none; padding: 0; margin: 0;">
+                    <li style="margin-bottom: 8px;"><a href="#" style="color: #fff; text-decoration: none;">About Us</a></li>
+                    <li style="margin-bottom: 8px;"><a href="#" style="color: #fff; text-decoration: none;">Learn More</a></li>
+                    <li style="margin-bottom: 8px;"><a href="#" style="color: #fff; text-decoration: none;">Dataset</a></li>
+                    <li style="margin-bottom: 8px;"><a href="#" style="color: #fff; text-decoration: none;">AI Diagnosis</a></li>
+                </ul>
+            </div>
+
+            <!-- Department Column -->
+            <div style="flex: 1 1 200px;">
+                <h3 style="font-family: Poppins, sans-serif; font-weight: 500; font-size: 18px; color: #ffd700; margin-bottom: 20px;">Department</h3>
+                <ul style="list-style: none; padding: 0; margin: 0;">
+                    <li style="margin-bottom: 8px;"><a href="#" style="color: #fff; text-decoration: none;">Disease Detection</a></li>
+                    <li style="margin-bottom: 8px;"><a href="#" style="color: #fff; text-decoration: none;">Health Insights</a></li>
+                    <li style="margin-bottom: 8px;"><a href="#" style="color: #fff; text-decoration: none;">Milk Quality Analysis</a></li>
+                    <li style="margin-bottom: 8px;"><a href="#" style="color: #fff; text-decoration: none;">Veterinary Support</a></li>
+                    <li style="margin-bottom: 8px;"><a href="#" style="color: #fff; text-decoration: none;">AI-Powered Diagnosis</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+</div>
+
+        <!-- Copyright Section -->
+        <div style="border-top: 1px solid rgba(255,255,255,0.3); padding-top: 20px; text-align: center;">
+            <p style="font-family: Poppins, sans-serif; font-size: 16px; line-height: 28px; margin: 0; color: #fff;">Copyright ©2025 All Rights Reserved</p>
+        </div>
+    </footer>
+</div>
+
+
+</body>
+</html>

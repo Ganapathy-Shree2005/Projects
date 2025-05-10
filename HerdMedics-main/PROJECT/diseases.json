@@ -1,0 +1,110 @@
+{
+    "diseases": [
+        {
+            "name": "Mastitis",
+            "milk_quality_impact": true,
+            "description": "Mastitis is a bacterial infection of the udder, caused by Staphylococcus aureus, Streptococcus agalactiae, or E. coli. It leads to udder swelling, pain, and changes in milk quality, such as clots, pus, or blood. Affected cows produce less milk, and untreated cases can cause permanent udder damage. The infection spreads through contaminated milking equipment, dirty barns, or poor hygiene. Preventing mastitis involves regular udder cleaning, proper milking techniques, and antibiotic treatment when needed. It is one of the most economically significant diseases in dairy cows, causing financial losses due to lower milk yields and discarded contaminated milk."
+        },
+        {
+            "name": "Brucellosis (Bang’s Disease)",
+            "milk_quality_impact": true,
+            "description": "Brucellosis is caused by Brucella abortus, leading to abortions, retained placenta, infertility, and reduced milk production. It spreads through infected animals' milk, urine, or fetal fluids. Affected cows may show mild fever and reproductive disorders. It is a zoonotic disease, meaning humans can contract it through unpasteurized milk, causing undulant fever. Prevention involves vaccination and culling infected animals. There is no effective treatment, so control is crucial in dairy farms. The disease can lead to chronic infections in cows, making them persistently infected and reducing herd productivity significantly over time."
+        },
+        {
+            "name": "Bovine Tuberculosis (TB)",
+            "milk_quality_impact": true,
+            "description": "Bovine TB, caused by Mycobacterium bovis, is a chronic disease affecting the lungs and lymph nodes. Infected cows show weight loss, respiratory distress, and lower milk yield. The disease spreads through contaminated milk, direct contact, or inhalation of infected droplets. It is a serious zoonotic disease, as humans can get TB from unpasteurized milk. Diagnosis is through skin testing, and infected cows are usually culled to prevent further spread. There is no effective treatment, making control through biosecurity measures essential. Dairy farms with TB outbreaks face strict regulations, leading to severe economic losses."
+        },
+        {
+            "name": "Leptospirosis",
+            "milk_quality_impact": true,
+            "description": "Leptospirosis is caused by Leptospira bacteria, affecting multiple organs, including the kidneys, liver, and reproductive system. Infected cows suffer from fever, jaundice, abortions, and decreased milk yield due to systemic illness. The bacteria spread through urine-contaminated water, making it a major risk in wet environments. It is also zoonotic, meaning humans can contract it through direct contact with infected animals. Vaccination, proper water management, and rodent control help prevent outbreaks. The disease can cause long-term kidney damage in cows, leading to chronic health problems and persistent reductions in milk productivity."
+        },
+        {
+            "name": "Salmonellosis",
+            "milk_quality_impact": true,
+            "description": "Salmonellosis, caused by Salmonella bacteria, leads to diarrhea, fever, dehydration, and weight loss in cattle. Affected cows have poor appetite, which lowers milk production. The disease spreads through contaminated feed, water, and direct contact with infected animals. Salmonella can contaminate milk, posing a public health risk. Preventing the disease involves maintaining hygiene, proper feed storage, and vaccination. Young calves are especially vulnerable and can suffer high mortality rates. The infection can also cause long-term digestive issues, reducing feed efficiency and making recovery difficult for affected cows."
+        },
+        {
+            "name": "Johne’s Disease (Paratuberculosis)",
+            "milk_quality_impact": true,
+            "description": "Johne’s disease is a chronic bacterial infection caused by Mycobacterium avium subspecies paratuberculosis. It leads to severe diarrhea, progressive weight loss, and reduced milk yield. The disease spreads through contaminated feces, milk, and colostrum. Infected cows continue to eat but lose body condition. There is no cure, and the disease is difficult to detect in early stages. Preventing its spread requires strict hygiene, testing, and culling infected animals. It severely impacts dairy farms by reducing production and increasing culling rates, leading to major economic losses over time."
+        },
+        {
+            "name": "Foot-and-Mouth Disease (FMD)",
+            "milk_quality_impact": true,
+            "description": "FMD is a highly contagious viral disease causing fever, mouth ulcers, and hoof lesions. Affected cows suffer from severe lameness, drooling, and reduced feed intake, leading to a drastic drop in milk production. The virus spreads through direct contact, contaminated feed, and airborne transmission. Outbreaks can cause significant economic losses due to culling and trade restrictions. Vaccination is the primary method of prevention, and infected cows require strict quarantine. Recovery can be slow, and some cows may have permanently reduced milk yields due to lingering health effects."
+        },
+        {
+            "name": "Bovine Viral Diarrhea (BVD)",
+            "milk_quality_impact": true,
+            "description": "BVD is caused by the Bovine Viral Diarrhea Virus (BVDV) and affects the immune system and reproductive health. Infected cows show symptoms like diarrhea, nasal discharge, fever, and loss of appetite, leading to decreased milk production. The virus spreads through direct contact, contaminated feed, and infected semen. Pregnant cows may give birth to weak or persistently infected calves. Prevention involves vaccination, biosecurity, and removing persistently infected animals from the herd. Long-term infections weaken cows, making them more susceptible to secondary diseases, which further reduce productivity and overall herd health."
+        },
+        {
+            "name": "Lumpy Skin Disease (LSD)",
+            "milk_quality_impact": true,
+            "description": "LSD is caused by Lumpy Skin Disease Virus and leads to fever, large skin nodules, swollen lymph nodes, and respiratory distress. Infected cows eat less, suffer from stress, and produce less milk. The virus spreads through biting insects like mosquitoes and ticks. Infected cows often take weeks to recover, causing prolonged milk production losses. Prevention includes vaccination, vector control, and biosecurity measures. Outbreaks can result in high economic losses due to reduced productivity and culling of severely affected cows."
+        },
+        {
+            "name": "Infectious Bovine Rhinotracheitis (IBR)",
+            "milk_quality_impact": true,
+            "description": "IBR, caused by Bovine Herpesvirus-1 (BHV-1), affects the respiratory system and reproductive health. Symptoms include fever, coughing, nasal discharge, and infertility. Infected cows produce less milk due to illness and decreased feed intake. The virus spreads through direct contact, contaminated equipment, and infected semen. Vaccination and biosecurity measures help prevent outbreaks. Infected cows may become lifelong carriers, leading to recurring outbreaks and long-term productivity losses."
+        },
+        {
+            "name": "Theileriosis (East Coast Fever)",
+            "milk_quality_impact": true,
+            "description": "Theileriosis is caused by Theileria protozoa, transmitted by ticks. It leads to fever, anemia, weakness, and swollen lymph nodes. Infected cows become lethargic and produce less milk due to poor health. Prevention includes tick control, vaccination, and proper herd management. Severe cases can lead to death, causing major economic losses in dairy farming."
+        },
+        {
+            "name": "Anthrax",
+            "milk_quality_impact": false,
+            "description": "Anthrax is a deadly bacterial disease caused by Bacillus anthracis. It spreads through contaminated soil, feed, or water. Symptoms include sudden death, high fever, difficulty breathing, and bleeding from body openings. It does not typically affect milk production because infected cows die quickly. The bacteria form spores that can survive for years in the environment, making control difficult. Vaccination is essential for prevention. Infected carcasses must be burned or buried deep to prevent further spread. It is zoonotic, meaning humans can contract it through contact with infected animals or consuming contaminated meat."
+        },
+        {
+            "name": "Blackleg",
+            "milk_quality_impact": false,
+            "description": "Blackleg is a fatal bacterial disease caused by Clostridium chauvoei, affecting young cattle. It enters the body through wounds or ingestion and causes muscle swelling, lameness, fever, and sudden death. The disease does not impact milk production because it primarily affects calves and leads to rapid death. Infected cattle often die within 24 to 48 hours, and treatment is usually ineffective. Vaccination is the best preventive measure. The bacteria can persist in the soil for years, making outbreaks unpredictable. Proper carcass disposal and hygiene are essential to controlling the disease."
+        },
+        {
+            "name": "Rabies",
+            "milk_quality_impact": false,
+            "description": "Rabies is a viral disease that affects the nervous system of all mammals, including cows. It is caused by the Rabies virus and spreads through bites from infected animals, usually wild animals like dogs, bats, or foxes. Symptoms include aggressive behavior, excessive salivation, difficulty swallowing, paralysis, and death. Since the disease progresses rapidly and is fatal, it does not impact milk production significantly. There is no cure; prevention relies on vaccination and controlling stray animal populations. Rabies is a severe zoonotic disease, meaning it can be transmitted to humans through bites or saliva exposure."
+        },
+        {
+            "name": "Bovine Spongiform Encephalopathy",
+            "milk_quality_impact": false,
+            "description": "BSE is a fatal neurodegenerative disease caused by abnormal prion proteins. It affects the brain and nervous system, leading to symptoms like aggression, lack of coordination, and weight loss. The disease spreads through contaminated feed containing infected animal tissue. While it causes severe neurological damage, it does not directly reduce milk production. There is no treatment, and affected animals must be culled. BSE is a serious public health concern because it is linked to variant Creutzfeldt-Jakob Disease (vCJD) in humans. Strict regulations on cattle feed and import controls have helped reduce its occurrence worldwide."
+        },
+        {
+            "name": "Traumatic Reticuloperitonitis",
+            "milk_quality_impact": false,
+            "description": "Hardware disease occurs when cows accidentally swallow sharp metal objects like nails or wires, which puncture the stomach lining. This leads to inflammation, pain, and infections. Symptoms include reduced appetite, reluctance to move, and weight loss. While it does not directly affect milk production, severe cases may lead to poor health, indirectly reducing overall productivity. Prevention involves using rumen magnets to capture metal objects and keeping pastures free of debris. Treatment includes anti-inflammatory drugs and surgery in severe cases. Good farm management and feeding practices can significantly reduce the risk of hardware disease."
+        },
+        {
+            "name": "Foot Rot",
+            "milk_quality_impact": false,
+            "description": "Foot rot is a bacterial infection caused by Fusobacterium necrophorum, leading to lameness, swelling, and foul-smelling hoof infections. The disease spreads in wet and muddy conditions, causing pain and difficulty walking. It does not directly reduce milk production, but affected cows may eat less due to pain, indirectly affecting weight gain. Treatment includes antibiotics, hoof trimming, and foot baths with antiseptic solutions. Prevention involves maintaining dry and clean barn conditions, proper hoof care, and vaccination. If left untreated, foot rot can lead to severe infections and permanent hoof damage, making it hard for the cow to move."
+        },
+        {
+            "name": "Pinkeye (Infectious Bovine Keratoconjunctivitis)",
+            "milk_quality_impact": false,
+            "description": "Pinkeye is a contagious bacterial eye infection caused by Moraxella bovis. It spreads through flies, dust, and direct contact. Symptoms include excessive tearing, eye swelling, cloudiness, and ulcers. Infected cows may experience temporary blindness, making it difficult to graze properly, but it does not directly reduce milk yield. Treatment involves antibiotic eye drops, protective patches, and controlling flies on the farm. Prevention includes fly control, vaccination, and avoiding overcrowding. Although pinkeye is not fatal, severe cases can lead to permanent blindness, making it difficult for cows to navigate and feed effectively."
+
+        },
+        {
+            "name": "Ringworm",
+            "milk_quality_impact": false,
+            "description": "Ringworm is a fungal skin infection caused by Trichophyton verrucosum. It leads to circular patches of hair loss, scaly skin, and irritation. The disease is highly contagious but does not affect milk production. It spreads through direct contact with infected animals, contaminated equipment, or barn surfaces. Treatment includes antifungal ointments and iodine-based disinfectants. Prevention involves proper barn sanitation, good nutrition, and avoiding overcrowding. Although ringworm is not life-threatening, it affects the animal’s appearance and can spread to humans. Infected cows usually recover within a few weeks, but lesions may persist for longer."
+        },
+        {
+            "name": "Warts (Bovine Papillomatosis)",
+            "milk_quality_impact": false,
+            "description": "Warts in cows are caused by the Bovine Papillomavirus and appear as rough, raised skin growths on the head, neck, udder, and legs. They are contagious but do not affect milk production. Young cattle are more susceptible, and the warts usually disappear on their own within months. Severe cases may require surgical removal. The virus spreads through direct contact and contaminated objects like brushes or milking equipment. Prevention includes vaccination and good hygiene practices. While warts do not harm milk yield, they can cause discomfort and make handling the cow difficult, especially during milking."
+        },
+        {
+            "name": "Wooden Tongue",
+            "milk_quality_impact": false,
+            "description": "Wooden tongue is a bacterial infection caused by Actinobacillus lignieresii. It affects the tongue and soft tissues of the mouth, causing swelling, difficulty eating, and excessive drooling. Since it affects food intake, cows may lose weight but do not directly experience a drop in milk production. The infection spreads through rough feed or mouth injuries. Treatment includes antibiotics and iodine-based solutions. Preventing the disease involves avoiding coarse feed, improving pasture quality, and monitoring cattle for early symptoms. While not fatal, untreated cases can lead to permanent tongue damage, making it difficult for cows to eat properly."
+        }
+    ]
+}

@@ -1,0 +1,339 @@
+live
+
+
+manual page 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HerdMedics - Diagnosis Portal</title>
+    <link rel="stylesheet" href="transition.css"> 
+    <script src="transition.js" defer></script>
+    <style>
+        body {
+            margin: 0;
+            font-family: Manrope, sans-serif;
+            background: url('images/bghome.png') no-repeat center center fixed;
+            background-size: cover;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            opacity: 0;
+            transition: opacity 0.5s ease-in-out;
+
+        }
+
+        header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 97.5%;
+            padding: 15px 20px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 60px;
+            background-color: #020519;
+            background-size: cover;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+        }
+
+        .logo-section img {
+            width: 180px;
+            height: 80px;
+        }
+
+        /* Navigation */
+        nav {
+            flex-grow: 1;
+            display: flex;
+            justify-content: center;
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 30px;
+        }
+
+        .nav-item {
+            padding: 10px 14px;
+            border-radius: 20px;
+            background-color: #93939A;
+            box-shadow: 0 2px 4px rgba(217, 217, 217, 0.5);
+            border: 1px solid #D9D9D9;
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: 700;
+            color: #1d1e21;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        .nav-item:hover, .nav-item.active {
+            background-color: #b0b9c6;
+            color: white;
+        }
+
+        /* Dropdown Menu */
+        .dropdown {
+            position: relative;
+        }
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #93939A;
+            box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            min-width: 110px;
+            text-align: left;
+            z-index: 10;
+            top: 100%;
+            left: 0;
+        }
+
+        .dropdown-content a {
+            display: block;
+            padding: 14px;
+            color: white;
+            text-decoration: none;
+            font-size: 14px;
+            border-bottom: 1px solid #E0E0E0;
+            transition: background 0.3s;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #b0b9c6;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        /* Circle Buttons */
+        .circle-buttons {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .circle-btn {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: #93939A;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            border: 1px solid #D9D9D9;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            font-size: 18px;
+        }
+
+        .circle-btn:hover {
+            background-color: #f1f1f1;
+        }
+
+        /* Profile Dropdown */
+        .profile-dropdown {
+            position: relative;
+        }
+        .dropdown-content {
+            right: 0;
+            left: auto;
+            top: 50px;
+            display: none;
+            position: absolute;
+            background-color: #93939A;
+            box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            min-width: 150px;
+            z-index: 10;
+            top: 100%;
+        }
+        .dropdown-content a {
+            display: block;
+            padding: 13px;
+            color: white;
+            text-decoration: none;
+            font-size: 14px;
+            transition: background 0.3s;
+        }
+        .dropdown-content a:hover {
+            background-color: #b0b9c6;
+        }
+        .dropdown-content a:hover {
+            background-color: #b0b9c6;
+        }
+
+        .profile-dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        /* Smooth transition for login */
+        .fade-out {
+            opacity: 1;
+            transition: opacity 0.5s ease-in-out;
+        }
+
+        .fade-out.hidden {
+            opacity: 0;
+        }
+ .container {
+            text-align: center;
+            padding: 40px;
+            background: #fff;
+            border-radius: 25px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .device-list {
+            margin-top: 20px;
+        }
+        .device-item {
+            padding: 10px;
+            border: 1px solid #0067FF;
+            border-radius: 15px;
+            cursor: pointer;
+            margin-bottom: 10px;
+        }
+        .device-item:hover {
+            background-color: #0067FF;
+            color: white;
+        }
+        #imageContainer {
+            margin-top: 20px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .captured-image {
+            width: 150px;
+            height: 150px;
+            border-radius: 10px;
+        }    </style>
+</head>
+<body>
+    <header>
+        <div class="logo-section">
+            <img src="images/hoomelogo.png" alt="HerdMedics Logo">
+        </div>
+
+        <nav>
+            <div class="nav-links">
+                <button class="nav-item" onclick="window.location.href='home.html'">HOME</button>
+                <div class="dropdown">
+                    <button class="nav-item">LIVE SCAN</button>
+                    <div class="dropdown-content">
+                        <a href="upload.html">UPLOADS</a>
+                        <a href="manual.html">MANUAL</a>
+                    </div>
+                </div>
+                <div class="dropdown">
+                    <button class="nav-item">VETPULSE</button>
+                    <div class="dropdown-content">
+                        <a href="infoherd.html">INFO HERD</a>
+                        <a href="hosp.html">HOSPITAL</a>
+                    </div>
+                </div>
+                <button class="nav-item" onclick="window.location.href='about.html'">ABOUT US</button>
+            </div>
+        </nav>
+
+        <div class="circle-buttons">
+            <div class="circle-btn">🔔</div>
+            <div class="circle-btn">💬</div>
+            <div class="profile-dropdown dropdown">
+                <div class="circle-btn" onclick="toggleProfileDropdown()">👤</div>
+                <div class="dropdown-content" id="profileDropdown">
+                    <a href="settings.html">Settings</a>
+                    <a href="whatsnew.html">What's New</a>
+                    <a href="report.html">Report Content</a>
+                    <a href="privacy.html">Privacy Policy</a>
+                    <a href="login.html">Sign Out</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+   <div class="container">
+        <h2>Live Scan</h2>
+        <button id="connectBtn">Connect</button>
+        <div class="device-list" id="deviceList"></div>
+        <button id="startBtn" style="display:none;">Start Capture</button>
+        <div id="imageContainer"></div>
+        <button id="stopBtn" style="display:none;">Stop Capture</button>
+    </div>
+
+    <script>
+        let selectedDevice = null;
+        let capturing = false;
+
+        document.getElementById('connectBtn').addEventListener('click', () => {
+            fetch('/get-devices')
+                .then(response => response.json())
+                .then(data => {
+                    const deviceList = document.getElementById('deviceList');
+                    deviceList.innerHTML = '';
+                    data.devices.forEach(device => {
+                        const deviceItem = document.createElement('div');
+                        deviceItem.className = 'device-item';
+                        deviceItem.textContent = device.name;
+                        deviceItem.addEventListener('click', () => {
+                            selectedDevice = device.id;
+                            verifyDevice();
+                        });
+                        deviceList.appendChild(deviceItem);
+                    });
+                });
+        });
+
+        function verifyDevice() {
+            fetch(`/verify-device?device=${selectedDevice}`)
+                .then(response => response.json())
+                .then(data => {
+                    if (data.success) {
+                        document.getElementById('startBtn').style.display = 'block';
+                    } else {
+                        alert('Device verification failed.');
+                    }
+                });
+        }
+
+        document.getElementById('startBtn').addEventListener('click', () => {
+            if (!selectedDevice) {
+                alert('No device selected');
+                return;
+            }
+            capturing = true;
+            document.getElementById('stopBtn').style.display = 'block';
+            captureImages();
+        });
+
+        function captureImages() {
+            if (!capturing) return;
+            fetch(`/capture-image?device=${selectedDevice}`)
+                .then(response => response.json())
+                .then(data => {
+                    if (data.success) {
+                        const img = document.createElement('img');
+                        img.src = data.image_url;
+                        img.className = 'captured-image';
+                        document.getElementById('imageContainer').appendChild(img);
+                    }
+                    setTimeout(captureImages, 2000);
+                });
+        }
+
+        document.getElementById('stopBtn').addEventListener('click', () => {
+            capturing = false;
+            document.getElementById('stopBtn').style.display = 'none';
+        });
+    </script>
+</body>
+</html>

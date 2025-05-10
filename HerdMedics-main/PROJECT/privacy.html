@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HerdMedics - Privacy Policy</title>
+    <link rel="stylesheet" href="styles.css"> 
+    <script src="script.js" defer></script> 
+    <style>
+        /* General Styling */
+        body {
+            margin: 0;
+            font-family: Manrope, sans-serif;
+            background: url('images/abtbg.png') no-repeat center center fixed;
+            background-size: cover;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 190vh;
+
+        } 
+        header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 97.5%;
+            padding: 15px 20px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 60px;
+            background: url('images/loginformbg.png') no-repeat center center fixed;
+            background-size: cover;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+        }
+
+        .logo-section img {
+            width: 180px;
+            height: 80px;
+        }
+
+        /* Navigation */
+        nav {
+            flex-grow: 1;
+            display: flex;
+            justify-content: center;
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 30px;
+        }
+
+        .nav-item {
+            padding: 10px 14px;
+            border-radius: 20px;
+            background-color: #93939A;
+            box-shadow: 0 2px 4px rgba(217, 217, 217, 0.5);
+            border: 1px solid #D9D9D9;
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: 700;
+            color: #1d1e21;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        .nav-item:hover, .nav-item.active {
+            background-color: #b0b9c6;
+            color: white;
+        }
+
+        /* Dropdown Menu */
+        .dropdown {
+            position: relative;
+        }
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #93939A;
+            box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            min-width: 110px;
+            text-align: left;
+            z-index: 10;
+            top: 100%;
+            left: 0;
+        }
+
+        .dropdown-content a {
+            display: block;
+            padding: 14px;
+            color: white;
+            text-decoration: none;
+            font-size: 14px;
+            border-bottom: 1px solid #E0E0E0;
+            transition: background 0.3s;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #b0b9c6;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        /* Circle Buttons */
+        .circle-buttons {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .circle-btn {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: #93939A;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            border: 1px solid #D9D9D9;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            font-size: 18px;
+        }
+
+        .circle-btn:hover {
+            background-color: #f1f1f1;
+        }
+
+        /* Profile Dropdown */
+        .profile-dropdown {
+            position: relative;
+        }
+        .dropdown-content {
+            right: 0;
+            left: auto;
+            top: 50px;
+            display: none;
+            position: absolute;
+            background-color: #93939A;
+            box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            min-width: 150px;
+            z-index: 10;
+            top: 100%;
+        }
+        .dropdown-content a {
+            display: block;
+            padding: 13px;
+            color: white;
+            text-decoration: none;
+            font-size: 14px;
+            transition: background 0.3s;
+        }
+        .dropdown-content a:hover {
+            background-color: #b0b9c6;
+        }
+        .dropdown-content a:hover {
+            background-color: #b0b9c6;
+        }
+
+        .profile-dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        /* Smooth transition for login */
+        .fade-out {
+            opacity: 1;
+            transition: opacity 0.5s ease-in-out;
+        }
+
+        .fade-out.hidden {
+            opacity: 0;
+        }
+       
+        /* Privacy Policy Section */
+        .privacy-policy-heading {
+        position: absolute;
+        margin-top: 70px;
+        top: 80px;
+        left: 50%;
+        transform: translateX(-50%);
+        font-size: 50px;
+        font-weight: bold;
+        background: linear-gradient(45deg, rgb(196, 102, 233), #a574b9);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        color: transparent;
+        text-align: center;
+        z-index: 10;
+        }
+
+        .policy-container {
+            max-width: 900px;
+            margin-top: 120px;
+            background: rgba(182, 191, 191, 0.95);
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        .policy-title {
+            text-align: center;
+            font-size: 34px;
+            font-weight: bold;
+            background: linear-gradient(45deg, rgb(96, 58, 143), #6e47a0);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .policy-section {
+            margin-bottom: 30px;
+        }
+
+        .policy-section h2 {
+            font-size: 20px;
+            color: #333;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+
+        .policy-section p {
+            font-size: 16px;
+            color: #444;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #020519;
+            color: white;
+            margin-top: 40px;
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo-section">
+            <img src="images/hoomelogo.png" alt="HerdMedics Logo">
+        </div>
+
+        <nav>
+            <div class="nav-links">
+                <button class="nav-item" onclick="window.location.href='home.html'">HOME</button>
+                <div class="dropdown">
+                    <button class="nav-item">MANUAL</button>
+                    <div class="dropdown-content">
+                        <a href="live.html">LIVE SCAN</a>
+                        <a href="upload.html">UPLOADS</a>
+                    </div>
+                </div>
+                <div class="dropdown">
+                    <button class="nav-item">VETPULSE</button>
+                    <div class="dropdown-content">
+                        <a href="infoherd.html">INFO HERD</a>
+                        <a href="hosp.html">HOSPITAL</a>
+                    </div>
+                </div>
+                <button class="nav-item" onclick="window.location.href='about.html'">ABOUT US</button>
+            </div>
+        </nav>
+
+        <div class="circle-buttons">
+            <div class="circle-btn">🔔</div>
+            <div class="circle-btn">💬</div>
+            <div class="profile-dropdown dropdown">
+                <div class="circle-btn" onclick="toggleProfileDropdown()">👤</div>
+                <div class="dropdown-content" id="profileDropdown">
+                    <a href="settings.html">Settings</a>
+                    <a href="whatsnew.html">What's New</a>
+                    <a href="report.html">Report Content</a>
+                    <a href="privacy.html">Privacy Policy</a>
+                    <a href="login.html">Sign Out</a>
+                </div>
+            </div>
+        </div>
+    </header>
+    <h1 class="privacy-policy-heading">Privacy Policy</h1>
+    <!-- Privacy Policy -->
+    <div class="policy-container">
+        <p><strong>Last Updated:</strong> February 22, 2025</p>
+
+        <div class="policy-section">
+            <h2>Data Collection</h2>
+            <p>HerdMedics values your privacy and ensures that data collection is limited to the information necessary for delivering our services. We collect personal data such as your name, email address, and contact details, along with cattle health-related data, images, and metadata used for disease detection. Your data is securely stored and never shared without explicit consent.</p>
+        </div>
+
+        <div class="policy-section">
+            <h2>Use of Information</h2>
+            <p>All collected information is utilized to improve system accuracy, personalize user experience, and enhance disease prediction models. We also use this data for customer support, internal analytics, and research to further veterinary advancements.</p>
+        </div>
+
+        <div class="policy-section">
+            <h2>Security and Protection</h2>
+            <p>Ensuring the confidentiality and security of your data is our top priority. We implement state-of-the-art encryption protocols, secured cloud storage, and access control measures to prevent unauthorized access or data breaches.</p>
+        </div>
+
+        <div class="policy-section">
+            <h2>Third-Party Integrations</h2>
+            <p>HerdMedics may collaborate with veterinary professionals, research institutions, and health organizations to enhance disease detection efficiency. However, any third-party data exchange is anonymized and strictly regulated to maintain compliance with global privacy standards.</p>
+        </div>
+
+        <div class="policy-section">
+            <h2>Legal Compliance</h2>
+            <p>We adhere to international privacy laws, including the General Data Protection Regulation (GDPR) and the California Consumer Privacy Act (CCPA). Users have the right to access, modify, or request deletion of their personal data at any time by contacting our support team.</p>
+        </div>
+
+        <div class="policy-section">
+            <h2>Device Access and Tracking</h2>
+            <p>For real-time disease analysis, our platform may request access to your camera and GPS location. This access is granted only with user approval and can be revoked at any time through your device settings.</p>
+        </div>
+
+        <div class="policy-section">
+            <h2>Policy Updates</h2>
+            <p>We continuously refine our privacy policies to reflect technological and regulatory advancements. Any updates to this policy will be posted on this page, and we encourage users to review it periodically.</p>
+        </div>
+
+        <div class="policy-section">
+            <h2>Contact Us</h2>
+            <p>If you have any questions regarding this privacy policy, please reach out to us at <strong>support@herdmedics.com</strong>.</p>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        &copy; 2025 HerdMedics. All Rights Reserved.
+    </footer>
+
+</body>
+</html>

@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cattle Health - Home</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #2C1E4A;
+            font-family: 'Allerta', sans-serif;
+            overflow-x: hidden;
+        }
+
+        .content-wrapper {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 20px;
+            transition: transform 0.4s ease-in-out, opacity 0.3s ease-in-out; /* Stylish transition */
+        }
+
+        .text-content {
+            max-width: 956px;
+            text-align: left;
+            margin-right: auto;
+        }
+
+        .heading {
+            font-size: 80px;
+            line-height: 100px;
+            margin: 0;
+        }
+
+        .heading .gradient-text {
+    background: linear-gradient(45deg, white, #755CB8);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent; /* Ensures no shadow effect */
+    display: inline-block;
+}
+
+
+
+        .image-container {
+            width: 600px;
+            height: 700px;
+            flex-shrink: 0;
+        }
+
+        .image-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* Button Styling */
+        #stepInsideBtn {
+            background-color: rgba(163, 68, 219, 0.58);
+            border: 1px solid rgba(163, 68, 219, 0.58);
+            border-radius: 30px;
+            padding: 20px 50px;
+            font-size: 20px;
+            font-weight: 600;
+            cursor: pointer;
+            margin-top: 70px;
+            transition: all 0.1s ease; /* Faster hover effect */
+        }
+
+        #stepInsideBtn span {
+            font-family: 'Roboto', sans-serif;
+            color: #CEDC96;
+            line-height: 160%;
+        }
+
+        #stepInsideBtn:hover {
+            background-color: rgba(163, 68, 219, 0.8);
+            border-color: rgba(163, 68, 219, 0.8);
+        }
+
+        /* Stylish Transition Effect */
+        .exit-animation {
+            transform: scale(0.8) translateX(-50px); /* Zoom out & slide left */
+            opacity: 0;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="content-wrapper">
+        <!-- Text Content -->
+        <div class="text-content">
+            <h1 class="heading">
+                <span class="gradient-text">Your path to smarter</span> 
+                <span class="gradient-text">Cattle Health</span><br>
+                <span class="gradient-text">starts here.</span>
+            </h1>
+            <!-- CTA Button -->
+            <button id="stepInsideBtn">
+                <span>Let's Step Inside</span>
+            </button>
+        </div>
+
+        <!-- Image -->
+        <div class="image-container">
+            <img src="images/indexdoc.jpg" alt="Screenshot Image">
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('stepInsideBtn').addEventListener('click', function() {
+            document.querySelector('.content-wrapper').classList.add('exit-animation'); // Apply stylish effect
+            setTimeout(() => {
+                window.location.href = 'login.html';
+            }, 300); // Quick transition
+        });
+    </script>
+
+</body>
+</html>

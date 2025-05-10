@@ -1,0 +1,413 @@
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>HerdMedics - Diagnosis Portal</title>
+        <link rel="stylesheet" href="transition.css">
+        <script src="transition.js" defer></script>
+        <style>
+            body {
+                margin: 0;
+                font-family: Manrope, sans-serif;
+                background: url('images/abtbg.png') no-repeat center center fixed;
+                background-size: cover;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                height: 100vh;
+            }
+
+            header {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                width: 97.5%;
+                padding: 15px 20px;
+                position: fixed;
+                top: 0;
+                left: 0;
+                right: 0;
+                height: 60px;
+                background: url('images/loginformbg.png') no-repeat center center fixed;
+                background-size: cover;
+                box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+                z-index: 1000;
+            }
+
+            .logo-section img {
+                width: 180px;
+                height: 80px;
+            }
+
+            /* Navigation */
+            nav {
+                flex-grow: 1;
+                display: flex;
+                justify-content: center;
+            }
+
+            .nav-links {
+                display: flex;
+                align-items: center;
+                gap: 30px;
+            }
+
+            .nav-item {
+                padding: 10px 14px;
+                border-radius: 20px;
+                background-color: #93939A;
+                box-shadow: 0 2px 4px rgba(217, 217, 217, 0.5);
+                border: 1px solid #D9D9D9;
+                cursor: pointer;
+                font-size: 14px;
+                font-weight: 700;
+                color: #1d1e21;
+                transition: background-color 0.3s, color 0.3s;
+            }
+
+            .nav-item:hover, .nav-item.active {
+                background-color: #b0b9c6;
+                color: white;
+            }
+
+            /* Dropdown Menu */
+            .dropdown {
+                position: relative;
+            }
+            .dropdown-content {
+                display: none;
+                position: absolute;
+                background-color: #93939A;
+                box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+                border-radius: 10px;
+                min-width: 110px;
+                text-align: left;
+                z-index: 10;
+                top: 100%;
+                left: 0;
+            }
+
+            .dropdown-content a {
+                display: block;
+                padding: 14px;
+                color: white;
+                text-decoration: none;
+                font-size: 14px;
+                border-bottom: 1px solid #E0E0E0;
+                transition: background 0.3s;
+            }
+
+            .dropdown-content a:hover {
+                background-color: #b0b9c6;
+            }
+
+            .dropdown:hover .dropdown-content {
+                display: block;
+            }
+
+            /* Circle Buttons */
+            .circle-buttons {
+                display: flex;
+                align-items: center;
+                gap: 10px;
+            }
+
+            .circle-btn {
+                width: 40px;
+                height: 40px;
+                border-radius: 50%;
+                background-color: #93939A;
+                box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+                border: 1px solid #D9D9D9;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                cursor: pointer;
+                transition: background-color 0.3s;
+                font-size: 18px;
+            }
+
+            .circle-btn:hover {
+                background-color: #f1f1f1;
+            }
+
+            /* Profile Dropdown */
+            .profile-dropdown {
+                position: relative;
+            }
+            .dropdown-content {
+                right: 0;
+                left: auto;
+                top: 50px;
+                display: none;
+                position: absolute;
+                background-color: #93939A;
+                box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+                border-radius: 10px;
+                min-width: 150px;
+                z-index: 10;
+                top: 100%;
+            }
+            .dropdown-content a {
+                display: block;
+                padding: 13px;
+                color: white;
+                text-decoration: none;
+                font-size: 14px;
+                transition: background 0.3s;
+            }
+            .dropdown-content a:hover {
+                background-color: #b0b9c6;
+            }
+            .dropdown-content a:hover {
+                background-color: #b0b9c6;
+            }
+
+            .profile-dropdown:hover .dropdown-content {
+                display: block;
+            }
+
+            /* Smooth transition for login */
+            .fade-out {
+                opacity: 1;
+                transition: opacity 0.5s ease-in-out;
+            }
+
+            .fade-out.hidden {
+                opacity: 0;
+            }
+
+            .about-button {
+                background: #C5C5CF;
+                border-radius: 24px;
+                padding: 11px 25px;
+                font-weight: 500;
+                font-size: 16px;
+                line-height: 100%;
+                color: #93939A;
+                border: none;
+                cursor: pointer;
+                transition: background-color 0.3s;
+            }
+
+            .about-button:hover {
+                background-color: #B5B5BF;
+            }
+
+            .user-section {
+                display: flex;
+                align-items: center;
+                gap: 10px;
+            }
+
+            .user-section img {
+                width: 168px;
+                height: 56px;
+            }
+
+            .container {
+                max-width: 1400px;
+                margin: 0 auto;
+                padding: 20px;
+                
+            }
+
+            .title {
+                font-weight: 700;
+                font-size: 40px;
+                text-align: center;
+                color: #252b42;
+                letter-spacing: 0.2px;
+                line-height: 50px;
+                margin: 30px 0;
+            }
+
+            .subscribe-section {
+                display: flex;
+                justify-content: center;
+                margin: 40px 0;
+                position: relative;
+            }
+
+            .subscribe-input {
+                width: 100%;
+                max-width: 688px;
+                height: 58px;
+                background: #f9f9f9;
+                border: 1px solid #e6e6e6;
+                border-radius: 5px;
+                padding: 0 20px;
+                font-size: 14px;
+                color: #737373;
+                box-sizing: border-box;
+            }
+
+            .subscribe-button {
+                width: 117px;
+                height: 58px;
+                background: #1ba0ab;
+                border: 1px solid #e6e6e6;
+                border-radius: 0 5px 5px 0;
+                color: white;
+                font-size: 14px;
+                cursor: pointer;
+                transition: background-color 0.3s;
+                position: absolute;
+                right: 0;
+                top: 0;
+            }
+
+            .about-cards {
+                display: flex;
+                justify-content: center;
+                gap: 25px;
+                flex-wrap: wrap;
+            }
+
+            .card {
+                width: 100%;
+                max-width: 400px;
+                background: rgba(255, 255, 255, 0.8);
+                padding: 25px;
+                box-sizing: border-box;
+                margin-bottom: 20px;
+            }
+
+            .card-content {
+                padding: 30px;
+                font-size: 14px;
+                line-height: 20px;
+                color: #737373;
+                text-align: justify;
+                margin: 0;
+            }
+
+            @media (max-width: 768px) {
+                .header {
+                    flex-direction: column;
+                    align-items: flex-start;
+                }
+
+                .nav-links {
+                    flex-wrap: wrap;
+                    gap: 20px;
+                }
+
+                .user-section {
+                    margin-top: 10px;
+                }
+
+                .subscribe-section {
+                    flex-direction: column;
+                    align-items: center;
+                }
+
+                .subscribe-input {
+                    margin-bottom: 10px;
+                }
+
+                .subscribe-button {
+                    position: static;
+                    width: 100%;
+                    max-width: 688px;
+                    border-radius: 5px;
+                }
+            }
+        </style></head>
+    <body>
+        <header>
+            <div class="logo-section">
+                <img src="images/hoomelogo.png" alt="HerdMedics Logo">
+            </div>
+
+            <nav>
+                <div class="nav-links">
+                    <button class="nav-item" onclick="window.location.href='home.html'">HOME</button>
+                    <div class="dropdown">
+                        <button class="nav-item">DIAGNO AI</button>
+                        <div class="dropdown-content">
+                            <a href="live.html">LIVE SCAN</a>
+                            <a href="upload.html">UPLOADS</a>
+                            <a href="manual.html">MANUAL</a>
+                        </div>
+                    </div>
+                    <div class="dropdown">
+                        <button class="nav-item">VETPULSE</button>
+                        <div class="dropdown-content">
+                            <a href="infoherd.html">INFOHERD</a>
+                            <a href="hosp.html">HOSPITAL</a>
+                        </div>
+                    </div>
+                    <button class="nav-item" onclick="window.location.href='about.html'">ABOUT US</button>
+                </div>
+            </nav>
+
+            <div class="circle-buttons">
+                <div class="circle-btn">🔔</div>
+                <div class="circle-btn">💬</div>
+                <div class="profile-dropdown dropdown">
+                    <div class="circle-btn" onclick="toggleProfileDropdown()">👤</div>
+                    <div class="dropdown-content" id="profileDropdown">
+                        <a href="settings.html">Settings</a>
+                        <a href="whatsnew.html">What's New</a>
+                        <a href="report.html">Report Content</a>
+                        <a href="privacy.html">Privacy Policy</a>
+                        <a href="login.html">Sign Out</a>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <div class="container">
+            <!-- About Us Title -->
+            <h3 class="title">ABOUT US</h3>
+
+            <!-- Subscribe Section -->
+            <div class="subscribe-section">
+                <input type="email" placeholder="Your Email" class="subscribe-input">
+                <button class="subscribe-button">Subscribe</button>
+            </div>
+
+            <!-- About Cards Section -->
+            <div class="about-cards">
+                <!-- Card 1 -->
+                <div class="card">
+                    <p class="card-content">
+                        At HerdMedics, we are dedicated to revolutionizing livestock healthcare through cutting-edge artificial intelligence. Our mission is to empower farmers and veterinarians with accurate, fast, and reliable disease detection tools that improve animal health and productivity. By combining advanced AI algorithms with real-time monitoring, we help detect diseases at an early stage, reducing risks and ensuring better livestock management.</p>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="card">
+                    <p class="card-content">
+                        Our innovative platform offers AI-powered diagnostics, real-time health tracking, and expert veterinary recommendations. Whether through smart image analysis or IoT-integrated monitoring systems, HerdMedics simplifies the complex process of livestock disease detection, making it accessible to farmers everywhere. With a commitment to precision and efficiency, we strive to bridge the gap between technology and agriculture, providing data-driven insights for proactive decision-making.   </p>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="card">
+                    <p class="card-content">
+                        We believe that healthy livestock means a thriving agricultural economy. Our team of experts, researchers, and developers work tirelessly to enhance our platform, integrating the latest advancements in artificial intelligence and veterinary science. At HerdMedics, we are not just building technology – we are creating a sustainable future where farmers have the tools they need to protect their livestock, increase productivity, and contribute to global food security. </p>
+                </div>
+            </div>
+        </div>
+
+        <script>
+            // Hover effect for subscribe button
+            document.querySelector('.subscribe-button').addEventListener('mouseover', function() {
+                this.style.backgroundColor = '#158f99';
+            });
+            document.querySelector('.subscribe-button').addEventListener('mouseout', function() {
+                this.style.backgroundColor = '#1ba0ab';
+            });
+
+            // Focus effect for input
+            document.querySelector('.subscribe-input').addEventListener('focus', function() {
+                this.style.borderColor = '#1ba0ab';
+            });
+            document.querySelector('.subscribe-input').addEventListener('blur', function() {
+                this.style.borderColor = '#e6e6e6';
+            });
+        </script>
+    </body>
+    </html>

@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HerdMedics - Diagnosis Portal</title>
+    <link rel="stylesheet" href="transition.css"> 
+    <script src="transition.js" defer></script>
+    <style>
+        body {
+            margin: 0;
+            font-family: Manrope, sans-serif;
+            background: url('images/bghome.png') no-repeat center center fixed;
+            background-size: cover;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 97.5%;
+            padding: 15px 20px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 60px;
+            background-color: #020519;
+            background-size: cover;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+        }
+
+        .logo-section img {
+            width: 180px;
+            height: 80px;
+        }
+
+        /* Navigation */
+        nav {
+            flex-grow: 1;
+            display: flex;
+            justify-content: center;
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 30px;
+        }
+
+        .nav-item {
+            padding: 10px 14px;
+            border-radius: 20px;
+            background-color: #93939A;
+            box-shadow: 0 2px 4px rgba(217, 217, 217, 0.5);
+            border: 1px solid #D9D9D9;
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: 700;
+            color: #1d1e21;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        .nav-item:hover, .nav-item.active {
+            background-color: #b0b9c6;
+            color: white;
+        }
+
+        /* Dropdown Menu */
+        .dropdown {
+            position: relative;
+        }
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #93939A;
+            box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            min-width: 110px;
+            text-align: left;
+            z-index: 10;
+            top: 100%;
+            left: 0;
+        }
+
+        .dropdown-content a {
+            display: block;
+            padding: 14px;
+            color: white;
+            text-decoration: none;
+            font-size: 14px;
+            border-bottom: 1px solid #E0E0E0;
+            transition: background 0.3s;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #b0b9c6;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        /* Circle Buttons */
+        .circle-buttons {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .circle-btn {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: #93939A;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            border: 1px solid #D9D9D9;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            font-size: 18px;
+        }
+
+        .circle-btn:hover {
+            background-color: #f1f1f1;
+        }
+
+        /* Profile Dropdown */
+        .profile-dropdown {
+            position: relative;
+        }
+        .dropdown-content {
+            right: 0;
+            left: auto;
+            top: 50px;
+            display: none;
+            position: absolute;
+            background-color: #93939A;
+            box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            min-width: 150px;
+            z-index: 10;
+            top: 100%;
+        }
+        .dropdown-content a {
+            display: block;
+            padding: 13px;
+            color: white;
+            text-decoration: none;
+            font-size: 14px;
+            transition: background 0.3s;
+        }
+        .dropdown-content a:hover {
+            background-color: #b0b9c6;
+        }
+        .dropdown-content a:hover {
+            background-color: #b0b9c6;
+        }
+
+        .profile-dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        /* Smooth transition for login */
+        .fade-out {
+            opacity: 1;
+            transition: opacity 0.5s ease-in-out;
+        }
+
+        .fade-out.hidden {
+            opacity: 0;
+        }
+.center-box {
+            width: 30%;
+            max-width: 750px;
+            background: white;
+            padding: 200px;
+            border-radius: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            position: absolute;
+            top: 55%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        /* Uploaded Image Styling */
+        #uploadedImage {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+        }
+
+        /* Diagnose Button */
+        #diagnoseBtn {
+            margin-top: 20px;
+            padding: 12px 20px;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        #diagnoseBtn:hover {
+            background-color: #0056b3;
+        }
+</style>
+</head>
+<body>
+    <header>
+        <div class="logo-section">
+            <img src="images/hoomelogo.png" alt="HerdMedics Logo">
+        </div>
+
+        <nav>
+            <div class="nav-links">
+                <button class="nav-item" onclick="window.location.href='home.html'">HOME</button>
+                <div class="dropdown">
+                    <button class="nav-item">UPLOADS</button>
+                    <div class="dropdown-content">
+                        <a href="live.html">LIVE SCAN</a>
+                        <a href="manual.html">MANUAL</a>
+                    </div>
+                </div>
+                <div class="dropdown">
+                    <button class="nav-item">VETPULSE</button>
+                    <div class="dropdown-content">
+                        <a href="infoherd.html">INFO HERD</a>
+                        <a href="hosp.html">HOSPITAL</a>
+                    </div>
+                </div>
+                <button class="nav-item" onclick="window.location.href='about.html'">ABOUT US</button>
+            </div>
+        </nav>
+
+        <div class="circle-buttons">
+            <div class="circle-btn">🔔</div>
+            <div class="circle-btn">💬</div>
+            <div class="profile-dropdown dropdown">
+                <div class="circle-btn" onclick="toggleProfileDropdown()">👤</div>
+                <div class="dropdown-content" id="profileDropdown">
+                    <a href="settings.html">Settings</a>
+                    <a href="whatsnew.html">What's New</a>
+                    <a href="report.html">Report Content</a>
+                    <a href="privacy.html">Privacy Policy</a>
+                    <a href="login.html">Sign Out</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Centered White Box for Image -->
+    <div class="center-box">
+        <h2>Uploaded Image</h2>
+        <img id="uploadedImage" alt="Uploaded Image">
+        <button id="diagnoseBtn" onclick="diagnoseImage()">Diagnose</button>
+    </div>
+
+    <script>
+        // Retrieve and display the uploaded image from local storage
+        const storedImage = localStorage.getItem("uploadedImage");
+
+        if (storedImage) {
+            const imgElement = document.getElementById("uploadedImage");
+            imgElement.src = storedImage;
+            imgElement.style.display = "block"; // Show image
+            document.getElementById("diagnoseBtn").style.display = "inline-block"; // Show diagnose button
+        }
+
+        // Function to send the image to backend for diagnosis
+        async function diagnoseImage() {
+            alert("Starting Diagnosis...");
+
+            let base64Image = storedImage.split(',')[1]; // Remove data URI header
+
+            try {
+                let response = await fetch("http://127.0.0.1:5000/predict", {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify({ image: base64Image })
+                });
+
+                let result = await response.json();
+                alert("Diagnosis Result: " + result.prediction);
+
+                // Store result in localStorage for display in results page
+                localStorage.setItem("diagnosisResult", result.prediction);
+                window.location.href = "diagnosis.html"; // Redirect to diagnosis page
+            } catch (error) {
+                alert("Error in diagnosis. Please try again.");
+                console.error("Diagnosis Error:", error);
+            }
+        }
+    </script></body>
+</html>
